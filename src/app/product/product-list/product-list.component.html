@@ -1,1 +1,17 @@
-<p>product-list works!</p>
+<div>
+  <mat-card>
+
+  </mat-card>
+  <div *ngIf="(products$ | async) as products; else loadingOrError">
+    <div class="container">
+      <div class="product"
+           *ngFor="let product of products$ | async | productFilter: filterProductName">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </div>
+  <ng-template #loadingOrError>
+
+  </ng-template>
+
+</div>
