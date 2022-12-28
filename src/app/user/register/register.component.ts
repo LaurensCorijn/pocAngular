@@ -17,10 +17,10 @@ function patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {
   }
 }
 
-function comparePasswords(control: AbstractControl): ValidationErrors | null {
+function comparePasswords(control: AbstractControl): ValidationErrors {
   const password = control.get('password')
   const confirmPassword = control.get('confirmPassword')
-  return password?.value === confirmPassword?.value ? null : { passwordsDiffer: true}
+  return password?.value === confirmPassword?.value ? {passwordsDiffer: false} : { passwordsDiffer: true}
 }
 
 function serverSideValidateUsername(
@@ -44,14 +44,35 @@ function serverSideValidateUsername(
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
-  public user: FormGroup | undefined
+  public user: FormGroup
   public errorMessage: string = ''
 
   constructor(
     private authService: AuthenticationServiceService,
     private router: Router,
     private fb: FormBuilder,
-  ) {}
+  ) {
+    this.user = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email], serverSideValidateUsername(this.authService.checkUserNameAvailability)],
+      passwordGroup: this.fb.group(
+        {
+          password: [
+            '',
+            [
+              Validators.required,
+              Validators.minLength(8),
+              patternValidator(/\d/, {hasNumber: true}),
+              patternValidator(/[A-Z]/, {hasUpperCase: true}),
+              patternValidator(/[a-z)]/, {hasLowerCase: true}),
+            ],
+          ],
+          confirmPassword: ['', Validators.required],
+        },
+        {validator: comparePasswords}
+      )
+    })
+  }
 
   ngOnInit() {
     this.user = this.fb.group({
@@ -77,7 +98,7 @@ export class RegisterComponent implements OnInit{
   }
 
   getErrorMessage(errors: any) {
-    if (!errors) {
+    if (errors == null) {
       return null
     }
     if (errors.required) {

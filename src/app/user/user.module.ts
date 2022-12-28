@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component'
 import { MaterialModule } from '../material/material/material.module'
 import { RouterModule, Routes } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms'
-import {MatLegacyButtonModule} from '@angular/material/legacy-button'
+//import {MatLegacyButtonModule} from '@angular/material/legacy-button'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,7 +22,7 @@ const routes: Routes = [
     MaterialModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    MatLegacyButtonModule,
+    //MatLegacyButtonModule,
   ],
 })
 export class UserModule { }

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core'
 import {Product} from '../../structures/product.model'
-import {ProductDataService} from './../product-data.service'
 
 @Component({
   selector: 'app-product-card',
@@ -8,7 +7,8 @@ import {ProductDataService} from './../product-data.service'
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-  @Input() public product: Product | undefined
+  @Input()
+  public product!: Product
 
   constructor() {}
 }

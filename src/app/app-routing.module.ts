@@ -6,6 +6,11 @@ import { SelectivePreloadStrategy } from './SelectivePreloadStrategy'
 
 const appRoutes: Routes = [
   {
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then(mod => mod.ProductModule),
+    data: {preload: true}
+  },
+  {
     path: '', redirectTo: 'product/list', pathMatch: 'full'
   },
   {

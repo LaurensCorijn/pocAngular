@@ -6,7 +6,10 @@ import {Product} from '../structures/product.model'
 })
 export class ProductFilterPipe implements PipeTransform {
 
-  transform(products: Product[], name: string): Product[]  {
+  transform(products: Product[] | null, name: string): Product[]  {
+    if (products == null) {
+      return []
+    }
     if (!name || name.length === 0) {
       return products
     }

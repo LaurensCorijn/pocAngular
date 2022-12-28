@@ -16,14 +16,22 @@ export class ProductDataService {
   constructor(private http: HttpClient) { }
 
   getProducts$(): Observable<Product[]>{
-    return this.http.get(`${environment.apiUrl}/products/`).pipe(tap(console.log),
+    return this.http.get(`https://apipoc20221227200802.azurewebsites.net/api/product/`).pipe(tap(console.log),
       catchError(this.handleError), map((list: any[]): Product[] => list.map(Product.fromJSON))
     )
   }
 
   getProduct$(id: string): Observable<Product>{
     return this.http
-      .get(`${environment.apiUrl}/products/${id}`).pipe(tap(console.log),catchError(this.handleError),map(Product.fromJSON))
+      .get(`https://apipoc20221227200802.azurewebsites.net/api/product/${id}`).pipe(tap(console.log),catchError(this.handleError),map(Product.fromJSON))
+  }
+
+  addNewProduct(product: Product) {
+    return this.http.post(`https://apipoc20221227200802.azurewebsites.net/api/product`, product.toJSON()).pipe()
+      .pipe(tap(console.log),catchError(this.handleError), map(Product.fromJSON))
+      .pipe(catchError((err) => {
+        return throwError(err)
+      }))
   }
 
   handleError(err: any): Observable<never> {

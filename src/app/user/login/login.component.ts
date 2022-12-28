@@ -16,14 +16,16 @@ function comparePasswords(control: AbstractControl): { [key: string]: any }{
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public user: FormGroup | undefined
+  public user: FormGroup
   public errorMessage: string = ''
 
   constructor(
     private authService: AuthenticationServiceService,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.user = this.fb.group({})
+  }
 
   ngOnInit() {
     this.user = this.fb.group({

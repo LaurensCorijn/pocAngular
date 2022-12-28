@@ -1,10 +1,9 @@
 {
   "/api": {
     "target": {
-      "host": "localhost",
+      "host": "apipoc20221227200802.azurewebsites.net",
       "protocol": "https:",
-      "port": 5001
-    },
+     },
     "secure": false,
     "changeOrigin": true,
     "logLevel": "info"
