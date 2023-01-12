@@ -1,45 +1,54 @@
-<div>
-  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        aria-label="name"
-        placeholder="name"
-        formControlName="name"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        aria-label="image"
-        placeholder="image"
-        formControlName="image"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        aria-label="price"
-        placeholder="price"
-        formControlName="price"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        aria-label="description"
-        placeholder="description"
-        formControlName="discription"
-      />
-    </mat-form-field>
-    <button mat-raised-button [disabled]='!addProductForm.valid'
-            type='submit'
-            color='primary'>
-      Add product
-    </button>
-  </form>
+<div class="page">
+  <mat-card class="card">
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+      <mat-card-header>
+        <mat-card-title class="fontTitle" i18n>Voeg product toe</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="content">
+        <mat-form-field>
+          <input
+            matInput
+            aria-label="name"
+            placeholder="name"
+            formControlName="productName"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            aria-label="image"
+            placeholder="image"
+            formControlName="image"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            aria-label="price"
+            placeholder="price"
+            formControlName="price"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            aria-label="description"
+            placeholder="description"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          [disabled]='!addProductForm.valid'
+          mat-raised-button
+          type="submit"
+          color="primary"
+          i18n
+          >
+          Voeg toe
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
 </div>

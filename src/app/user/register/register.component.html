@@ -1,27 +1,10 @@
-<div>
-  <mat-card>
+<div class="page">
+  <mat-card class="card">
     <form [formGroup]="user" (ngSubmit)="onSubmit()">
       <mat-card-header>
-        <mat-card-title>Register</mat-card-title>
+        <mat-card-title i18n>Registreren</mat-card-title>
       </mat-card-header>
-      <mat-card-content>
-          <span>
-            <mat-form-field>
-              <input
-                matInput
-                placeholder="user name"
-                aria-label="user name"
-                formControlName="gebruikersnaam"
-              />
-              <mat-error
-                *ngIf="
-                user.get('username')?.errors &&
-                user.get('username')?.touched"
-              >
-                {{ getErrorMessage(user.get('username')?.errors) }}
-              </mat-error>
-            </mat-form-field>
-          </span>
+      <mat-card-content class="content">
         <mat-form-field>
           <input
             matInput
@@ -35,7 +18,7 @@
             {{ getErrorMessage(user.get('email')?.errors) }}
           </mat-error>
         </mat-form-field>
-        <span formGroupName="passwordGroup">
+        <span formGroupName="passwordGroup" class="content">
             <mat-form-field>
               <input
                 type="password"
@@ -93,13 +76,13 @@
           </span>
       </mat-card-content>
       <mat-card-actions>
-        <a [routerLink]="['/login']">login</a>
         <button
           mat-raised-button
           type="submit"
           color="primary"
+          i18n
         >
-         Register
+         Registreer
         </button>
       </mat-card-actions>
     </form>

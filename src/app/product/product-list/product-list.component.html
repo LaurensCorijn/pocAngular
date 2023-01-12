@@ -1,17 +1,18 @@
-<div>
-  <mat-card>
-
-  </mat-card>
+<div class="container backgroundColor">
+    <mat-form-field class="search">
+      <input matInput (change)='filterProduct$.next(test.value)' placeholder="search" type="text" #test [value]="filterProductName"/>
+    </mat-form-field>
   <div *ngIf="(products$ | async) as products; else loadingOrError">
-    <div class="container">
-      <div class="product"
-           *ngFor="let product of products$ | async | productFilter: filterProductName">
+    <mat-grid-list cols="4" rowHeight="500px">
+      <mat-grid-tile
+        *ngFor="let product of products$ | async | productFilter: filterProductName"
+        [colspan]="1"
+        [rowspan]="1"
+      >
         <app-product-card [product]="product"></app-product-card>
-      </div>
-    </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
   <ng-template #loadingOrError>
-
   </ng-template>
-
 </div>

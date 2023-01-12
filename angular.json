@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "pocAngular14": {
+      "i18n": {
+        "sourceLocale": "nl-BE",
+        "locales": {
+          "en-UK": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["en-UK"],
             "outputPath": "dist/poc-angular14",
             "index": "src/index.html",
             "main": "src/main.ts",

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http'
 import {AppRoutingModule} from './app-routing.module';
 import { UserModule } from './user/user.module'
 import {httpInterceptorProviders} from './interceptors'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {httpInterceptorProviders} from './interceptors'
   ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         ProductModule,
         MaterialModule,
         HttpClientModule,

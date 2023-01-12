@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  min-width: 300px;
+}
+
+.fontTitle {
+  font-size: 20px;
+  font-weight: bolder;
+}

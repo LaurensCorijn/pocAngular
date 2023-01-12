@@ -49,5 +49,11 @@ export class ProductAddComponent implements OnInit{
     ).subscribe((pro: Product) => {
       this.confirmationMessage = `a product was succesfully added`
     })
+    this.addProductForm = this.fb.group({
+      productName: ['', Validators.required],
+      image: ['', Validators.required],
+      price: ['', Validators.required],
+      description: ['', Validators.required],
+    })
   }
 }

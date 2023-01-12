@@ -1,0 +1,91 @@
+cp <?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="nl-BE" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7508072460580847405" datatype="html">
+        <source>Voeg product toe</source>
+        <target>Voeg product toe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product-add/product-add.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6716582687371099270" datatype="html">
+        <source>Inloggen</source>
+        <target>Inloggen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8285898758808179872" datatype="html">
+        <source>Registreren</source>
+        <target>Registreren</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/register/register.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3335510207946507474" datatype="html">
+        <source> Voeg toe </source>
+        <target>Voeg toe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product-add/product-add.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2047530427608946279" datatype="html">
+        <source>Meer info</source>
+        <target>Meer info</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product-card/product-card.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1429398867915200705" datatype="html">
+        <source> Inloggen </source>
+        <target>Inloggen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/login/login.component.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7084443652003694773" datatype="html">
+        <source>Maak een account</source>
+        <target>Maak een account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/login/login.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4751851694072182991" datatype="html">
+        <source> Registreer </source>
+        <target>Registreer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/register/register.component.html</context>
+          <context context-type="linenumber">84,86</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

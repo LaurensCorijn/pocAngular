@@ -9,13 +9,13 @@ import {ProductResolver} from './ProductResolver';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { ProductAddComponent } from './product-add/product-add.component'
 import {ReactiveFormsModule} from '@angular/forms'
+import { AuthGuard } from '../user/auth.guard'
 
 
 const routes: Routes = [
   {path: 'list', component: ProductListComponent},
   {path: 'detail/:id', component: ProductDetailComponent, resolve: {product: ProductResolver}},
-  {path: 'add', component: ProductAddComponent},
-  //path toevoegen voor add
+  {path: 'add', canActivate: [AuthGuard], component: ProductAddComponent}, //canActivate: [AuthGuard],
 ]
 
 @NgModule({

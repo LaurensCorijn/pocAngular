@@ -53,7 +53,6 @@ export class RegisterComponent implements OnInit{
     private fb: FormBuilder,
   ) {
     this.user = this.fb.group({
-      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email], serverSideValidateUsername(this.authService.checkUserNameAvailability)],
       passwordGroup: this.fb.group(
         {
@@ -76,7 +75,6 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit() {
     this.user = this.fb.group({
-      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email], serverSideValidateUsername(this.authService.checkUserNameAvailability)],
       passwordGroup: this.fb.group(
         {
@@ -125,7 +123,7 @@ export class RegisterComponent implements OnInit{
   onSubmit() {
     this.authService
       .register(
-        this.user?.value.username,
+        this.user?.value.email,
         this.user?.value.email,
         this.user?.value.passwordGroup.password
       )

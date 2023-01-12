@@ -1,10 +1,19 @@
-<mat-card>
+<mat-card class="card">
   <mat-card-header>
-    <mat-card-title>
-      <a [routerLink]="['../../product/detail/'+product.id]">{{product.name}}</a>
-    </mat-card-title>
+    <div>
+      <img src="{{product.image}}">
+    </div>
   </mat-card-header>
   <mat-card-content>
-
+    <div class="divContent">
+      <p class="textFont">{{product.name}}</p>
+      <p class="textFont">€ {{product.price}}</p>
+    </div>
+    <mat-divider></mat-divider>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">
+      <a [routerLink]="['../../product/detail/'+product.id]" class="linkFont" i18n>Meer info</a>
+    </button>
+  </mat-card-actions>
 </mat-card>
