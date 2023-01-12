@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http'
 import {AppRoutingModule} from './app-routing.module';
 import { UserModule } from './user/user.module'
 import {httpInterceptorProviders} from './interceptors'
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LanguageSwitchComponent } from './language-switch/language-switch.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    MainNavComponent
+    MainNavComponent,
+    LanguageSwitchComponent
   ],
     imports: [
         BrowserModule,
