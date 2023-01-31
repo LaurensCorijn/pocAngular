@@ -19,8 +19,11 @@ export class LanguageSwitchComponent {
   }
 
   changeLanguage(value: string) {
-    const pathName = location.pathname
-    this.router.navigate([`nl-BE/${pathName}`])
+    //const pathName = location.pathname
+    this.router.navigate([`${value}`])
+    //const test = `${location.origin}/${value}`
+    //console.log(test)
+    //this.router.navigateByUrl('https://nl.ign.com')
   }
 }
 
