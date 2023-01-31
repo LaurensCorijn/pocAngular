@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {MatDividerModule} from '@angular/material/divider'
+import {MatSelectModule} from '@angular/material/select'
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider'
     MatInputModule,
     MatButtonModule,
     MatGridListModule,
+    MatSelectModule,
   ],
   exports: [
     MatCardModule,
@@ -30,6 +32,7 @@ import {MatDividerModule} from '@angular/material/divider'
     MatInputModule,
     MatButtonModule,
     MatGridListModule,
+    MatSelectModule,
   ]
 })
 export class MaterialModule { }
