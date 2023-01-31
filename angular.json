@@ -19,7 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": ["en-UK"],
+            "localize": ["nl-BE","en-UK"],
             "outputPath": "dist/poc-angular14",
             "index": "src/index.html",
             "main": "src/main.ts",
