@@ -28,6 +28,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    const currentUser = localStorage.getItem('currentUser')
+    if (currentUser != null)
+    {
+      this.router.navigate(['/product/list'])
+    }
     this.user = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -41,9 +46,11 @@ export class LoginComponent implements OnInit {
         (val) => {
           if (val) {
             if (this.authService.redirectUrl) {
+              location.reload()
               this.router.navigateByUrl(this.authService.redirectUrl)
               this.authService.redirectUrl = null
             } else {
+              location.reload()
               this.router.navigate(['/product/list'])
             }
           } else {

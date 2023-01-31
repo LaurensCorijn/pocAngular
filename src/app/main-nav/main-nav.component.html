@@ -4,9 +4,13 @@
         <a i18n class="navItem fontNav" [routerLink]="['product/list']">Home</a>
         <a i18n class="navItem fontNav" [routerLink]="['product/add']">Voeg product toe</a>
       </span>
-      <span class="flexNav">
+      <span *ngIf="!loggedIn" class="flexNav">
         <a i18n class="navItem fontNav navLogRegister" [routerLink]="['login']">Inloggen</a>
         <a i18n class="navItem fontNav navLogRegister" [routerLink]="['register']">Registreren</a>
+        <app-language-switch></app-language-switch>
+      </span>
+      <span *ngIf="loggedIn" class="flexNav">
+        <button i18n mat-button class="navLogRegister fontNav navItem logoutButton" (click)="logout()" >Logout</button>
         <app-language-switch></app-language-switch>
       </span>
   </mat-toolbar>

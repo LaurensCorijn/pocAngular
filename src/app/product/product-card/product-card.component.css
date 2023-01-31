@@ -4,7 +4,7 @@
 
 img {
   object-fit: contain;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .linkFont {
@@ -15,7 +15,7 @@ img {
 }
 
 .textFont {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .divContent {

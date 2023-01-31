@@ -74,6 +74,11 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit() {
+    const currentUser = localStorage.getItem('currentUser')
+    if (currentUser != null)
+    {
+      this.router.navigate(['/product/list'])
+    }
     this.user = this.fb.group({
       email: ['', [Validators.required, Validators.email], serverSideValidateUsername(this.authService.checkUserNameAvailability)],
       passwordGroup: this.fb.group(
@@ -131,9 +136,11 @@ export class RegisterComponent implements OnInit{
         (val) => {
           if (val) {
             if (this.authService.redirectUrl != null) {
+              location.reload()
               this.router.navigateByUrl(this.authService.redirectUrl);
               this.authService.redirectUrl = null
             } else {
+              location.reload()
               this.router.navigate(['/product/list'])
             }
           } else {

@@ -4,4 +4,6 @@
   margin-right: 200px;
 }
 
-
+.buyButton {
+  background-color: green !important;
+}

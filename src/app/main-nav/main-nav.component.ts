@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-main-nav',
@@ -8,4 +7,16 @@ import { Router } from '@angular/router'
 })
 export class MainNavComponent {
 
+  public loggedIn: boolean
+
+  constructor() {
+    const currentUser = localStorage.getItem('currentUser')
+
+    this.loggedIn = currentUser != null
+  }
+
+  public logout() {
+    localStorage.removeItem('currentUser')
+    this.loggedIn = false
+  }
 }
